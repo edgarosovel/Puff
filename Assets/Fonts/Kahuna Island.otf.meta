@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 520c77ae7dbd84aa2a094544acaa1015
+timeCreated: 1508001363
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Kahuna Island
+  fontNames:
+  - Kahuna Island
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
