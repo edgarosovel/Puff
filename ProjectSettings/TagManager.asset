@@ -5,6 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - GameManager
+  - ui
+  - panel_no_money
+  - panel_buy
+  - texto_monedas
+  - panel_choose
   layers:
   - Default
   - TransparentFX
@@ -14,7 +19,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - UI_top
   - 
   - 
   - 

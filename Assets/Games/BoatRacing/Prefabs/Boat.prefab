@@ -59,6 +59,7 @@ GameObject:
   - component: {fileID: 114006565750470422}
   - component: {fileID: 114229257537451526}
   - component: {fileID: 114976254577790840}
+  - component: {fileID: 114008929763408828}
   m_Layer: 0
   m_Name: Boat
   m_TagString: Untagged
@@ -526,6 +527,21 @@ MonoBehaviour:
     i15: 115
   m_ServerOnly: 0
   m_LocalPlayerAuthority: 1
+--- !u!114 &114008929763408828
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1275106525822762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cf70185ba012492d88aba2422eb50e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  state: 
+  gameplay_time: 5
+  score: 0
+  ui: {fileID: 0}
 --- !u!114 &114229257537451526
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -546,7 +562,7 @@ MonoBehaviour:
   m_VelocityThreshold: 0.0001
   m_SnapThreshold: 5
   m_InterpolateRotation: 1
-  m_InterpolateMovement: 20
+  m_InterpolateMovement: 0.01
 --- !u!114 &114516547797490312
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -630,7 +646,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 1070646650
+  randomSeed: 725545921
   InitialModule:
     serializedVersion: 3
     enabled: 1

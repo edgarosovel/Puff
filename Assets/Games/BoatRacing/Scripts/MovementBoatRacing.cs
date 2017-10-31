@@ -12,7 +12,6 @@ public class MovementBoatRacing : NetworkBehaviour {
 	Camera cam;
 	public GameObject nombre, arrow; 
 	GameManager gameManager;
-	List <int[]> scores = new List<int[]>();
 
 	void Start () {
 		if (!isLocalPlayer) {
@@ -20,6 +19,7 @@ public class MovementBoatRacing : NetworkBehaviour {
 			Destroy (this);
 			return;
 		}
+		gameManager = GetComponent<GameManager>();
 		particles = GetComponent<EmitParticles> ();
 		nombre.SetActive (false);
 		cam = Camera.main;
@@ -31,17 +31,13 @@ public class MovementBoatRacing : NetworkBehaviour {
 	}
 		
 	void Update () {
-		if (gameManager == null) {
-			if (GameObject.FindWithTag("GameManager")!=null)
-			gameManager = GameObject.FindWithTag("GameManager").GetComponent<GameManager>();
-			return;
-		}
 		if (gameManager.state!="playing") return;
 		transform.position = Vector3.SmoothDamp(transform.position, _to, ref velocity, smooth);
 		if ((Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began) || Input.GetKeyDown("space")){
 			touch_count++;
+			gameManager.score = touch_count;
 			if(touch_count==200){
-				//CmdFinish ();
+				gameManager.CmdFinish ();
 			}
 			if (isServer) particles.RpcEmitParticles ();
 			else particles.CmdEmitParticles ();
@@ -51,20 +47,4 @@ public class MovementBoatRacing : NetworkBehaviour {
 		cam.transform.position = Vector3.SmoothDamp(cam.transform.position,  new Vector3 
 			(gameObject.transform.position.x+cam_offset,cam.transform.position.y,cam.transform.position.z), ref velocity_cam, 5f);
 	}
-
-
-	[Command]
-	public void CmdFinish(){
-		int [] s = {base.connectionToClient.connectionId, touch_count};
-		scores.Add (s);
-		RpcFinish ();
-	}
-
-
-	[ClientRpc]
-	void RpcFinish(){
-		scores.Sort ();
-		//gameManager.setFinish (scores);
-	}
-		
 }
