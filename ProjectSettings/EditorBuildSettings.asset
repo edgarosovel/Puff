@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Main menu/Menu.unity
     guid: acabe45250b6d40919e2d36d8981162b
   - enabled: 1
-    path: Assets/SampleScenes/Scenes/NetworkLobby.unity
+    path: Assets/LocalMultiplayer/LocalMultiplayer.unity
     guid: 3c0d76c55eed6214f9d3b070caede5d3
   - enabled: 1
     path: Assets/Games/BoatRacing/BoatRacing.unity
