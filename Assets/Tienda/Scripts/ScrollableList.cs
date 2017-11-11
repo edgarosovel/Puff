@@ -10,7 +10,8 @@ public class ScrollableList : MonoBehaviour
 	string skins_comprados;
 	int[]skins_array;
 	string[]s_skins_array;
-	int selected, estado;
+	string selected;
+	int estado;
 
 	void obtener_comprados(){
 		//skins_comprados = ZPlayerPrefs.GetString ("skins_comprados");
@@ -20,8 +21,8 @@ public class ScrollableList : MonoBehaviour
 
     void Start()
     {
-		if (!ZPlayerPrefs.HasKey("skin")) ZPlayerPrefs.SetInt ("skin",0);
-		selected = ZPlayerPrefs.GetInt ("skin");
+		if (!ZPlayerPrefs.HasKey("skin")) ZPlayerPrefs.SetString ("skin", "Vaquita");
+		selected = ZPlayerPrefs.GetString ("skin");
         RectTransform rowRectTransform = itemPrefab.GetComponent<RectTransform>();
         RectTransform containerRectTransform = gameObject.GetComponent<RectTransform>();
 
@@ -40,7 +41,6 @@ public class ScrollableList : MonoBehaviour
 
 		//Get list of bought items
 		//obtener_comprados();
-		int aux = 0;
         int j = 0;
         for (int i = 0; i < itemCount; i++)
         {
@@ -51,7 +51,7 @@ public class ScrollableList : MonoBehaviour
             //create a new item, name it, and set the parent
 			//GameObject newItem = (i<3)?Instantiate(prefabCoins) as GameObject:Instantiate(itemPrefab) as GameObject;
 			GameObject newItem = Instantiate(itemPrefab) as GameObject;
-			newItem.name = "item"+i;
+			//newItem.name = "item"+i;
 			newItem.transform.SetParent (gameObject.transform, false);
 
             //move and size the new item
@@ -68,14 +68,14 @@ public class ScrollableList : MonoBehaviour
 			//if(i>=3){
 			//INTIALIZE EACH BUTTON
 				//if (skins_array [aux] == i) {
-			estado = selected == i ? 1 : 0;
+			//estado = selected == i ? 1 : 0;
 					//if(aux<skins_array.Length-1){
 						//aux++;
 					//}
 				//} else {
 					//estado ="0";
 				//}
-				newItem.GetComponent<store_button>().initButton(estado, i, ratio);
+				newItem.GetComponent<store_button>().initButton(selected, i, ratio);
 			//}
 			//else{
 			//	newItem.GetComponent<Store_button_coins>().initButton("",i);

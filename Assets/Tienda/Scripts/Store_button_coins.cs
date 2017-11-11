@@ -5,14 +5,14 @@ using UnityEngine.UI;
 public class Store_button_coins : MonoBehaviour {
 	
 	public GameObject textoBoton, imagen;
-	GameObject purchaser;
+	//GameObject purchaser;
 	string nombre;
 	int posicion;
 	Sprite sprite;
 	public Sprite[] sprites;
 
 	public void pressedButton(){
-		purchaser = GameObject.Find("Purchaser");
+		//purchaser = GameObject.Find("Purchaser");
 		if (posicion == 0) {
 			//purchaser.GetComponent<Purchaser> ().buyCoins1();
 		} else if (posicion == 1) {

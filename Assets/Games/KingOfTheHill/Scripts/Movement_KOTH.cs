@@ -20,6 +20,12 @@ public class Movement_KOTH : MonoBehaviour {
 
 	void FixedUpdate () {
 		rb.AddForce (new Vector3(x,0,y) * force);
-//		rb.MovePosition(transform.position + new Vector3(0,y,x) * Time.deltaTime);
+	}
+
+	void OnTriggerEnter(Collider col){
+		if(col.gameObject.tag == "caida")
+		{
+			Destroy(gameObject);
+		}
 	}
 }

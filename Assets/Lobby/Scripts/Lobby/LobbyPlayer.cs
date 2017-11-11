@@ -11,6 +11,8 @@ namespace Prototype.NetworkLobby
     //Any LobbyHook can then grab it and pass those value to the game player prefab (see the Pong Example in the Samples Scenes)
     public class LobbyPlayer : NetworkLobbyPlayer
     {
+
+		MatchData match_data;
 		public Text playerNameText;
         public Button readyButton;
         public Button waitingPlayerButton;
@@ -23,10 +25,7 @@ namespace Prototype.NetworkLobby
         [SyncVar(hook = "OnMyName")]
         public string playerName;
         [SyncVar(hook = "OnMySkin")]
-		public int skin;
-		[SyncVar(hook = "OnMyUserId")]
-		public uint userId;
-
+		public string skin;
 
         public Color OddRowColor = new Color(250.0f / 255.0f, 250.0f / 255.0f, 250.0f / 255.0f, 1.0f);
         public Color EvenRowColor = new Color(180.0f / 255.0f, 180.0f / 255.0f, 180.0f / 255.0f, 1.0f);
@@ -40,6 +39,8 @@ namespace Prototype.NetworkLobby
         public override void OnClientEnterLobby()
         {
             base.OnClientEnterLobby();
+
+			match_data = FindObjectOfType<MatchData> ();
 
             if (LobbyManager.s_Singleton != null) LobbyManager.s_Singleton.OnPlayersNumberModified(1);
 
@@ -92,8 +93,8 @@ namespace Prototype.NetworkLobby
         void SetupLocalPlayer()
         {
 			playerName = ZPlayerPrefs.GetString ("username");
-			skin = ZPlayerPrefs.GetInt ("skin");
-			CmdSetPlayerData(skin, playerName, netId.Value);
+			skin = ZPlayerPrefs.GetString ("skin");
+			CmdSetPlayerData(skin, playerName);
 
             remoteIcone.gameObject.SetActive(false);
             localIcone.gameObject.SetActive(true);
@@ -160,14 +161,9 @@ namespace Prototype.NetworkLobby
 			playerNameText.text = newName;
         }
 
-		public void OnMySkin(int newSkin)
+		public void OnMySkin(string newSkin)
 		{
 			skin = newSkin;
-		}
-
-		public void OnMyUserId(uint newUserId)
-		{
-			userId = newUserId;
 		}
 
         public void OnReadyClicked()
@@ -193,16 +189,15 @@ namespace Prototype.NetworkLobby
         }
 
 		[Command]
-		void CmdSetPlayerData(int newSkin, string newPlayername, uint newUserId){
+		void CmdSetPlayerData(string newSkin, string newPlayername){
 			skin = newSkin;
 			playerName = newPlayername;
-			userId = newUserId;
 		}
 
         [ClientRpc]
         public void RpcUpdateCountdown(int countdown)
         {
-            LobbyManager.s_Singleton.countdownPanel.UIText.text = "Match Starting in " + countdown;
+            LobbyManager.s_Singleton.countdownPanel.UIText.text = "Match starting in " + countdown;
             LobbyManager.s_Singleton.countdownPanel.gameObject.SetActive(countdown != 0);
         }
 
@@ -218,5 +213,6 @@ namespace Prototype.NetworkLobby
             LobbyPlayerList._instance.RemovePlayer(this);
             if (LobbyManager.s_Singleton != null) LobbyManager.s_Singleton.OnPlayersNumberModified(-1);
         }
+
     }
 }

@@ -5,7 +5,7 @@ using UnityEngine.Networking;
 
 public class MovementBoatRacing : NetworkBehaviour {
 
-	int touch_count;
+	public int touch_count;
 	float startTime,smooth,angleVelocity,_toAngle,zAngle,cam_offset;
 	Vector3 _from, _to, velocity,velocity_cam;
 	EmitParticles particles;
@@ -36,8 +36,8 @@ public class MovementBoatRacing : NetworkBehaviour {
 		if ((Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began) || Input.GetKeyDown("space")){
 			touch_count++;
 			gameManager.score = touch_count;
-			if(touch_count==200){
-				gameManager.CmdFinish ();
+			if(touch_count==5){
+				gameManager.CmdFinishGame ();
 			}
 			if (isServer) particles.RpcEmitParticles ();
 			else particles.CmdEmitParticles ();

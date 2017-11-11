@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Main menu/Menu.unity
+- path: Assets/Games/BoatRacing/BoatRacing.unity
   isLoaded: 1
   isActive: 1

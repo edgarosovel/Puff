@@ -11,7 +11,9 @@ public class Panel_multiplayer_name : MonoBehaviour {
 	Color red;
 
 	void Start () {
-		if (!ZPlayerPrefs.HasKey("skin")) ZPlayerPrefs.SetInt ("skin",0);
+		ZPlayerPrefs.DeleteKey ("skin");
+
+		if (!ZPlayerPrefs.HasKey("skin")) ZPlayerPrefs.SetString ("skin", "Vaquita");
 		if (ZPlayerPrefs.HasKey ("username")) gameObject.SetActive (false);
 		ColorUtility.TryParseHtmlString ("#EF4836", out red);
 	}

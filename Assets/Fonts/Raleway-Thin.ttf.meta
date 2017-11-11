@@ -3,13 +3,15 @@ guid: 96350d7fe77bd446e8e978b9916b7507
 timeCreated: 1468283479
 licenseType: Pro
 TrueTypeFontImporter:
-  serializedVersion: 3
-  fontSize: 16
+  serializedVersion: 4
+  fontSize: 500
   forceTextureCase: -2
-  characterSpacing: 1
-  characterPadding: 0
+  characterSpacing: 0
+  characterPadding: 1
   includeFontData: 1
-  fontNames: []
+  fontName: Raleway
+  fontNames:
+  - Raleway
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0

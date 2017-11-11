@@ -10,6 +10,7 @@ TagManager:
   - panel_buy
   - texto_monedas
   - panel_choose
+  - caida
   layers:
   - Default
   - TransparentFX
