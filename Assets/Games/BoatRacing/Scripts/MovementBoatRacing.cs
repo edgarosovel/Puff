@@ -5,23 +5,20 @@ using UnityEngine.Networking;
 
 public class MovementBoatRacing : NetworkBehaviour {
 
-	public int touch_count;
+	int touch_count;
 	float startTime,smooth,angleVelocity,_toAngle,zAngle,cam_offset;
 	Vector3 _from, _to, velocity,velocity_cam;
 	EmitParticles particles;
 	Camera cam;
-	public GameObject nombre, arrow; 
 	GameManager gameManager;
 
 	void Start () {
 		if (!isLocalPlayer) {
-			arrow.SetActive (false);
 			Destroy (this);
 			return;
 		}
 		gameManager = GetComponent<GameManager>();
 		particles = GetComponent<EmitParticles> ();
-		nombre.SetActive (false);
 		cam = Camera.main;
 		cam_offset = cam.transform.position.x - gameObject.transform.position.x;
 		velocity_cam = velocity = Vector3.zero;
@@ -31,12 +28,12 @@ public class MovementBoatRacing : NetworkBehaviour {
 	}
 		
 	void Update () {
-		if (gameManager.state!="playing") return;
+		if (GameManager.state!="playing") return;
 		transform.position = Vector3.SmoothDamp(transform.position, _to, ref velocity, smooth);
 		if ((Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began) || Input.GetKeyDown("space")){
 			touch_count++;
 			gameManager.score = touch_count;
-			if(touch_count==5){
+			if(touch_count==gameManager.pointsToWin){
 				gameManager.CmdFinishGame ();
 			}
 			if (isServer) particles.RpcEmitParticles ();

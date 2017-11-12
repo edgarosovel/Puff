@@ -53,10 +53,11 @@
   <ItemGroup>
      <Compile Include="Assets\Games\BoatRacing\Scripts\EmitParticles.cs" />
      <Compile Include="Assets\Games\BoatRacing\Scripts\GameManager.cs" />
-     <Compile Include="Assets\Games\BoatRacing\Scripts\LoadingAnimation.cs" />
      <Compile Include="Assets\Games\BoatRacing\Scripts\MovementBoatRacing.cs" />
+     <Compile Include="Assets\Games\KingOfTheHill\Scripts\CollisionsKingOfTheHill.cs" />
      <Compile Include="Assets\Games\KingOfTheHill\Scripts\Movement_KOTH.cs" />
      <Compile Include="Assets\Games\Scripts\Leaderboard.cs" />
+     <Compile Include="Assets\Games\Scripts\LoadingAnimation.cs" />
      <Compile Include="Assets\Games\Scripts\ScoreRow.cs" />
      <Compile Include="Assets\Games\Scripts\ScoreTableManager.cs" />
      <Compile Include="Assets\Lobby\Scripts\DraggablePanel.cs" />

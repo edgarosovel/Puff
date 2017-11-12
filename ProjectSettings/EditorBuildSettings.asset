@@ -17,3 +17,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Tienda/Store.unity
     guid: f4d74c989c2bb4c2da8068fa554d22a1
+  - enabled: 1
+    path: Assets/Games/KingOfTheHill/KingOfTheHill.unity
+    guid: 373806b7a342e4d48a3161536d8ed916

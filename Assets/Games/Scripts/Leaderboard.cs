@@ -37,6 +37,7 @@ public class Leaderboard : MonoBehaviour {
 				}
 			}else points = x.Key.ToString() + " pts";
 			score_row.set_values (i.ToString() + "°", x.Value.ToString(), points);
+			i++;
 		});
 	}
 

@@ -7,8 +7,7 @@ using UnityEngine.UI;
 
 public class GameManager : NetworkBehaviour {
 
-	public GameObject puff;
-	public GameObject playerNameObj;
+	public GameObject puff,playerNameObj, arrow;
 
 	[SyncVar]
 	public string playerName;
@@ -18,10 +17,9 @@ public class GameManager : NetworkBehaviour {
 
 	ScoreTableManager score_table_manager;
 	public bool higher_score_wins;
-	[HideInInspector]
-	public string state;
+	public static string state;
 	float time;
-	public int gameplay_time; 
+	public int gameplay_time, pointsToWin; 
 	[HideInInspector] public int score;
 	int floored_time;
 	GameObject ui, start_info, loading, end_info;
@@ -29,6 +27,11 @@ public class GameManager : NetworkBehaviour {
 	public GameObject  score_table;
 
 	void Start(){
+		if (!isLocalPlayer) {
+			arrow.SetActive (false);
+		} else {
+			playerNameObj.SetActive (false);
+		}
 		match_data = FindObjectOfType<MatchData> ();
 		if (match_data.player_exists (SystemInfo.deviceUniqueIdentifier+playerName)) {
 			string[] info = match_data.get_player_info (SystemInfo.deviceUniqueIdentifier+playerName);
@@ -46,8 +49,8 @@ public class GameManager : NetworkBehaviour {
 		end_info = ui.transform.GetChild(2).gameObject;
 
 		if (!isServer)return;
-		time = 5;
-		Invoke ("StartCounter",5f);
+		time = 7;
+		Invoke ("StartCounter",6.5f);
 	}
 
 	[ServerCallback]
@@ -64,9 +67,14 @@ public class GameManager : NetworkBehaviour {
 	[Command]
 	public void CmdFinishGame(){
 		RpcUpdateState ("finished", 0);
-		RpcSetMinigameScore ();
+		set_minigame_scores ();
 		RpcShowScores ();
+	}
 
+	void set_minigame_scores(){
+		foreach (var player in match_data.players.Values) {
+			player.game_manager.RpcSetMinigameScore();
+		}
 	}
 
 	[ClientRpc]
@@ -85,6 +93,7 @@ public class GameManager : NetworkBehaviour {
 		List<KeyValuePair<int,string>> minigame_scores = match_data.get_minigame_for_points (higher_score_wins);
 		int i = 1;
 		foreach (var player in minigame_scores) {
+			Debug.Log ("Minigame table: "+player.Value+ "score "+ player.Key.ToString());
 			int points = 0;
 			switch (i){
 			case 1: points = 10;
@@ -121,7 +130,9 @@ public class GameManager : NetworkBehaviour {
 
 	[ClientRpc]
 	void RpcSetMinigameScore(){
-		if (isLocalPlayer) CmdSetMinigamePoints (SystemInfo.deviceUniqueIdentifier+playerName, score);
+		if (isLocalPlayer) {
+			CmdSetMinigamePoints (SystemInfo.deviceUniqueIdentifier+playerName, score);
+		}
 	}
 		
 	void StartCounter(){
@@ -140,8 +151,7 @@ public class GameManager : NetworkBehaviour {
 
 	void handleChanges(string state, int time){
 		if (state == "counter") {
-			if (time == 5) {
-				
+			if (time > 4) {
 				loading.SetActive (false);
 				counter.text = "READY?";
 			} else if (time > 1) {
@@ -155,10 +165,12 @@ public class GameManager : NetworkBehaviour {
 					RpcUpdateState ("playing", gameplay_time);
 				}
 				start_info.SetActive (false);
+				arrow.SetActive (false);
+				playerNameObj.SetActive (false);
 			}
 		} else if (state == "playing") {
 			if (time == 0) {
-				if (isServer) {
+				if (isServer && isLocalPlayer) {
 					CmdFinishGame ();
 				}
 			} else {
@@ -174,8 +186,8 @@ public class GameManager : NetworkBehaviour {
 
 	///// MATCH DATA FUNCTIONS /////
 	void add_player(){
-		if (isServer) RpcAddPlayer (SystemInfo.deviceUniqueIdentifier+playerName, playerName, skin, 0, 0);
-		else CmdAddPlayer (SystemInfo.deviceUniqueIdentifier+playerName, playerName, skin, 0,0);
+		if (isServer) RpcAddPlayer (SystemInfo.deviceUniqueIdentifier + playerName, playerName, skin, 0, 0);
+		else CmdAddPlayer (SystemInfo.deviceUniqueIdentifier+playerName, playerName, skin, 0, 0);
 	}
 
 	void set_up_player(string name, string skin){
@@ -187,6 +199,10 @@ public class GameManager : NetworkBehaviour {
 		return match_data.get_minigame_scores (higher_score_wins);
 	}
 
+	public int get_number_of_players(){
+		return match_data.players.Count;
+	}
+
 	[Command]
 	public void CmdAddPlayer (string id, string playerName, string skin, int global_points, int minigame_points){
 		RpcAddPlayer (id, playerName, skin, global_points, minigame_points);
@@ -195,6 +211,7 @@ public class GameManager : NetworkBehaviour {
 	[ClientRpc]
 	public void RpcAddPlayer (string id, string playerName, string skin, int global_points, int minigame_points){
 		match_data.add_player (id, playerName, skin, global_points, minigame_points);
+		if (isServer) match_data.set_game_manager (id, this);
 	}
 
 	[Command]

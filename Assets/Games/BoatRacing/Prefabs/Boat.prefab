@@ -540,11 +540,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   puff: {fileID: 1415218497985896}
   playerNameObj: {fileID: 1111964693797992}
+  arrow: {fileID: 1362416285989350}
   playerName: 
   skin: 
   higher_score_wins: 1
   state: 
   gameplay_time: 60
+  pointsToWin: 200
   score: 0
   score_table: {fileID: 1735110896581332, guid: 1069c815b9efc41c2aff6381291a0eb4,
     type: 2}
@@ -568,7 +570,7 @@ MonoBehaviour:
   m_VelocityThreshold: 0.0001
   m_SnapThreshold: 5
   m_InterpolateRotation: 1
-  m_InterpolateMovement: 10
+  m_InterpolateMovement: 2
 --- !u!114 &114516547797490312
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -580,9 +582,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9db94a827afbe449ea7d3d6ab6eb585d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  touch_count: 0
-  nombre: {fileID: 1111964693797992}
-  arrow: {fileID: 1362416285989350}
 --- !u!114 &114976254577790840
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -5,13 +5,11 @@ using System.Linq;
 
 public class MatchData : MonoBehaviour {
 
-	int players_added=0;
-
 	public Dictionary <string, PlayerInfo> players = new Dictionary<string, PlayerInfo> ();
 	public static MatchData instance;
 
 	void Awake (){
-		instance = this;
+		//instance = this;
 	}
 
 	public void add_player (string id, string playerName, string skin, int global_points, int minigame_points){
@@ -35,13 +33,13 @@ public class MatchData : MonoBehaviour {
 
 	public void set_minigame_points(string id, int points){
 		if (!players.ContainsKey(id)) return;
+		Debug.Log ("setting "+id+" points "+points.ToString());
 		players[id].minigame_points = points;
-		players_added++;
-		if (players_added == players.Count) {
-			players_added = 0;
-			// update global scores
-			// comando para mostrar tabla
-		}
+	}
+
+	public void set_game_manager(string id, GameManager game_manager){
+		if (!players.ContainsKey(id)) return;
+		players[id].game_manager = game_manager;
 	}
 
 	public string[] get_player_info(string id){
@@ -54,8 +52,7 @@ public class MatchData : MonoBehaviour {
 		foreach(var player in players.Values){
 			leaderboard.Add (new KeyValuePair<int, string> (player.global_points, player.playerName));
 		}
-		leaderboard.OrderByDescending (x => x.Key).ToList();
-		return leaderboard;
+		return leaderboard.OrderByDescending (x => x.Key).ToList();
 	}
 
 	public List<KeyValuePair<int,string>> get_minigame_for_points (bool higher_score_wins){
@@ -63,9 +60,7 @@ public class MatchData : MonoBehaviour {
 		foreach(var player in players){
 			scores.Add (new KeyValuePair<int, string> (player.Value.minigame_points, player.Key));
 		}
-		if (higher_score_wins) scores.OrderByDescending (x => x.Key).ToList();
-		else scores.OrderBy (x => x.Key).ToList();
-		return scores;
+		return (higher_score_wins) ? scores.OrderByDescending (x => x.Key).ToList() : scores.OrderBy(x => x.Key).ToList();
 	}
 
 	public List<KeyValuePair<int,string>> get_minigame_scores (bool higher_score_wins){
@@ -73,9 +68,7 @@ public class MatchData : MonoBehaviour {
 		foreach(var player in players.Values){
 			scores.Add (new KeyValuePair<int, string> (player.minigame_points, player.playerName));
 		}
-		if (higher_score_wins) scores.OrderByDescending (x => x.Key).ToList();
-		else scores.OrderBy (x => x.Key).ToList();
-		return scores;
+		return (higher_score_wins) ? scores.OrderByDescending (x => x.Key).ToList() : scores.OrderBy(x => x.Key).ToList();
 	}
 
 	public class PlayerInfo{
@@ -83,6 +76,7 @@ public class MatchData : MonoBehaviour {
 		public string skin;
 		public int global_points;
 		public int minigame_points;
+		public GameManager game_manager;
 
 		public PlayerInfo(string playerName, string skin, int global_points, int minigame_points){
 			this.playerName = playerName;
