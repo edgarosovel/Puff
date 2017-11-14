@@ -12,9 +12,14 @@ namespace Prototype.NetworkLobby
     public class LobbyManager : NetworkLobbyManager 
     {
         static short MsgKicked = MsgType.Highest + 1;
+		public MatchData match_data;
 
         static public LobbyManager s_Singleton;
 
+		[Space]
+		[Header("MINIGAMES")]
+		public Object[] games;
+		public GameObject[] players;
 
         [Header("Unity UI Lobby")]
         [Tooltip("Time in second between all players ready & match start")]
@@ -383,10 +388,13 @@ namespace Prototype.NetworkLobby
                     (lobbySlots[i] as LobbyPlayer).RpcUpdateCountdown(0);
                 }
             }
-
+			//gamePlayerPrefab = players[0];
+			Debug.Log(playScene);
+			playScene = games[0].name;
+			Debug.Log (games [0].name);
             ServerChangeScene(playScene);
         }
-
+	
         // ----------------- Client callbacks ------------------
 
         public override void OnClientConnect(NetworkConnection conn)

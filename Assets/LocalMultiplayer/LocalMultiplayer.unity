@@ -115,6 +115,14 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 11475086, guid: c0978251ff7b10d4fb954a4b56acd9f0, type: 2}
+      propertyPath: games.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 11475086, guid: c0978251ff7b10d4fb954a4b56acd9f0, type: 2}
+      propertyPath: players.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 22459552, guid: c0978251ff7b10d4fb954a4b56acd9f0, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -209,7 +217,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11475086, guid: c0978251ff7b10d4fb954a4b56acd9f0, type: 2}
       propertyPath: m_PlayScene
-      value: KingOfTheHill
+      value: BoatRacing
       objectReference: {fileID: 0}
     - target: {fileID: 11475086, guid: c0978251ff7b10d4fb954a4b56acd9f0, type: 2}
       propertyPath: m_MaxPlayers
@@ -226,7 +234,7 @@ Prefab:
     - target: {fileID: 11475086, guid: c0978251ff7b10d4fb954a4b56acd9f0, type: 2}
       propertyPath: m_GamePlayerPrefab
       value: 
-      objectReference: {fileID: 1744685048857954, guid: 1c838f69cb376430a9fe514936d1d228,
+      objectReference: {fileID: 1275106525822762, guid: 936bb9ec91be540d98b1382c3bc67373,
         type: 2}
     - target: {fileID: 11475086, guid: c0978251ff7b10d4fb954a4b56acd9f0, type: 2}
       propertyPath: prematchCountdown
@@ -244,6 +252,36 @@ Prefab:
       propertyPath: m_Text
       value: Puff Olympics
       objectReference: {fileID: 0}
+    - target: {fileID: 11475086, guid: c0978251ff7b10d4fb954a4b56acd9f0, type: 2}
+      propertyPath: players.Array.data[0]
+      value: 
+      objectReference: {fileID: 1744685048857954, guid: 1c838f69cb376430a9fe514936d1d228,
+        type: 2}
+    - target: {fileID: 11475086, guid: c0978251ff7b10d4fb954a4b56acd9f0, type: 2}
+      propertyPath: players.Array.data[1]
+      value: 
+      objectReference: {fileID: 1275106525822762, guid: 936bb9ec91be540d98b1382c3bc67373,
+        type: 2}
+    - target: {fileID: 11475086, guid: c0978251ff7b10d4fb954a4b56acd9f0, type: 2}
+      propertyPath: players.Array.data[2]
+      value: 
+      objectReference: {fileID: 1538393405757154, guid: 560dd498ad59d4aafa9ccd24c3164469,
+        type: 2}
+    - target: {fileID: 11475086, guid: c0978251ff7b10d4fb954a4b56acd9f0, type: 2}
+      propertyPath: games.Array.data[0]
+      value: 
+      objectReference: {fileID: 102900000, guid: 373806b7a342e4d48a3161536d8ed916,
+        type: 3}
+    - target: {fileID: 11475086, guid: c0978251ff7b10d4fb954a4b56acd9f0, type: 2}
+      propertyPath: games.Array.data[1]
+      value: 
+      objectReference: {fileID: 102900000, guid: efc10edc33fcf42ab8572faac8aa473c,
+        type: 3}
+    - target: {fileID: 11475086, guid: c0978251ff7b10d4fb954a4b56acd9f0, type: 2}
+      propertyPath: games.Array.data[2]
+      value: 
+      objectReference: {fileID: 102900000, guid: a8491ec23c0704905a799ce8534cc44f,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c0978251ff7b10d4fb954a4b56acd9f0, type: 2}
   m_IsPrefabParent: 0

@@ -48,3 +48,5 @@
 /Users/MACBOOKRETINA/Software/Puff/Temp/bin/Debug/Unity.CecilTools.dll
 /Users/MACBOOKRETINA/Software/Puff/Temp/bin/Debug/Mono.Cecil.Pdb.dll
 /Users/MACBOOKRETINA/Software/Puff/Temp/bin/Debug/Mono.Cecil.Mdb.dll
+/Users/MACBOOKRETINA/Software/Puff/Temp/bin/Debug/Assembly-CSharp.dll.mdb
+/Users/MACBOOKRETINA/Software/Puff/Temp/bin/Debug/Assembly-CSharp.dll

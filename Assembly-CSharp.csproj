@@ -52,12 +52,18 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Games\BoatRacing\Scripts\EmitParticles.cs" />
-     <Compile Include="Assets\Games\BoatRacing\Scripts\GameManager.cs" />
      <Compile Include="Assets\Games\BoatRacing\Scripts\MovementBoatRacing.cs" />
+     <Compile Include="Assets\Games\FallingFloor\Scripts\CollisionsFallingFloor.cs" />
+     <Compile Include="Assets\Games\FallingFloor\Scripts\FallingFloorManager.cs" />
+     <Compile Include="Assets\Games\FallingFloor\Scripts\FloorManager.cs" />
+     <Compile Include="Assets\Games\FallingFloor\Scripts\MovementFallingFloor.cs" />
+     <Compile Include="Assets\Games\FallingFloor\Scripts\TileFallingFloor.cs" />
      <Compile Include="Assets\Games\KingOfTheHill\Scripts\CollisionsKingOfTheHill.cs" />
      <Compile Include="Assets\Games\KingOfTheHill\Scripts\Movement_KOTH.cs" />
+     <Compile Include="Assets\Games\Scripts\GameManager.cs" />
      <Compile Include="Assets\Games\Scripts\Leaderboard.cs" />
      <Compile Include="Assets\Games\Scripts\LoadingAnimation.cs" />
+     <Compile Include="Assets\Games\Scripts\NextGameButton.cs" />
      <Compile Include="Assets\Games\Scripts\ScoreRow.cs" />
      <Compile Include="Assets\Games\Scripts\ScoreTableManager.cs" />
      <Compile Include="Assets\Lobby\Scripts\DraggablePanel.cs" />
@@ -88,10 +94,15 @@
      <Compile Include="Assets\Tienda\Scripts\Store_button_coins.cs" />
      <Compile Include="Assets\ZFrame\ZPlayerPrefs.cs" />
      <None Include="Assets\Lobby\Documentation.txt" />
+     <None Include="Assets\3dModels\Space Kit\License.txt" />
      <None Include="Assets\Lobby\Instruction.txt" />
+     <None Include="Assets\Standard Assets\ParticleSystems\Shaders\PriorityParticleAlpha.shader" />
+     <None Include="Assets\Standard Assets\ParticleSystems\ParticleSystemsGuidelines.txt" />
      <None Include="Assets\Main menu\DifuseX.shader" />
      <None Include="Assets\Standard Assets\Fonts\OpenSans\License!.txt" />
      <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
+     <None Include="Assets\Standard Assets\ParticleSystems\Shaders\PriorityParticleAddSoft.shader" />
+     <None Include="Assets\Standard Assets\ParticleSystems\Shaders\PriorityParticleAdd.shader" />
  <Reference Include="Facebook.Unity.Settings">
  <HintPath>/Users/MACBOOKRETINA/Software/Puff/Library/FacebookSDK/Facebook.Unity.Settings.dll</HintPath>
  </Reference>

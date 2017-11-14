@@ -57,6 +57,8 @@ GameObject:
   - component: {fileID: 222106732671750072}
   - component: {fileID: 114886057755585312}
   - component: {fileID: 114965933793992674}
+  - component: {fileID: 114529899629647752}
+  - component: {fileID: 114506267507192932}
   m_Layer: 5
   m_Name: Btn_nextgame
   m_TagString: Untagged
@@ -192,6 +194,49 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Next game
+--- !u!114 &114506267507192932
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1707407224466190}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96ab7d80939cf4678952832bb07c88ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114529899629647752
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1707407224466190}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 16
+    i1: 105
+    i2: 200
+    i3: 21
+    i4: 185
+    i5: 239
+    i6: 196
+    i7: 28
+    i8: 42
+    i9: 255
+    i10: 99
+    i11: 129
+    i12: 41
+    i13: 26
+    i14: 14
+    i15: 180
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 0
 --- !u!114 &114603270242124210
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -321,7 +366,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 114886057755585312}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 114506267507192932}
+        m_MethodName: next_scene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!222 &222106732671750072
