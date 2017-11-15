@@ -545,7 +545,7 @@ MonoBehaviour:
   skin: 
   higher_score_wins: 1
   time: 0
-  gameplay_time: 60
+  gameplay_time: 5
   pointsToWin: 200
   score: 0
   score_table: {fileID: 1735110896581332, guid: 1069c815b9efc41c2aff6381291a0eb4,

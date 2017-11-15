@@ -35,7 +35,6 @@ namespace Prototype.NetworkLobby
         static Color ReadyColor = new Color(0.0f, 204.0f / 255.0f, 204.0f / 255.0f, 1.0f);
         static Color TransparentColor = new Color(0, 0, 0, 0);
 
-
         public override void OnClientEnterLobby()
         {
             base.OnClientEnterLobby();

@@ -18,8 +18,8 @@ namespace Prototype.NetworkLobby
 
 		[Space]
 		[Header("MINIGAMES")]
-		public Object[] games;
-		public GameObject[] players;
+		public string[] game_scenes;
+		public GameObject[] game_player_prefabs;
 
         [Header("Unity UI Lobby")]
         [Tooltip("Time in second between all players ready & match start")]
@@ -390,8 +390,6 @@ namespace Prototype.NetworkLobby
             }
 			//gamePlayerPrefab = players[0];
 			Debug.Log(playScene);
-			playScene = games[0].name;
-			Debug.Log (games [0].name);
             ServerChangeScene(playScene);
         }
 	
