@@ -33,7 +33,10 @@ public class GameManager : NetworkBehaviour {
 			playerNameObj.SetActive (false);
 		}
 		match_data = FindObjectOfType<MatchData> ();
+
 		if (match_data.player_exists (SystemInfo.deviceUniqueIdentifier+playerName)) {
+			Debug.Log ("ok ya existe");
+			if (isServer) match_data.set_game_manager (SystemInfo.deviceUniqueIdentifier+playerName, this);
 			string[] info = match_data.get_player_info (SystemInfo.deviceUniqueIdentifier+playerName);
 			set_up_player (info [1], info [0]); 
 		} else if(isLocalPlayer) {

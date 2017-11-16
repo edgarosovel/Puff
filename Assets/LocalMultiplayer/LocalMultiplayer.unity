@@ -2255,7 +2255,10 @@ MonoBehaviour:
   m_PlayerSpawnMethod: 1
   m_OfflineScene: LocalMultiplayer
   m_OnlineScene: 
-  m_SpawnPrefabs: []
+  m_SpawnPrefabs:
+  - {fileID: 1744685048857954, guid: 1c838f69cb376430a9fe514936d1d228, type: 2}
+  - {fileID: 1275106525822762, guid: 936bb9ec91be540d98b1382c3bc67373, type: 2}
+  - {fileID: 1538393405757154, guid: 560dd498ad59d4aafa9ccd24c3164469, type: 2}
   m_CustomConfig: 0
   m_MaxConnections: 4
   m_ConnectionConfig:
@@ -2323,14 +2326,11 @@ MonoBehaviour:
   m_PlayScene: BoatRacing
   lobbySlots: []
   match_data: {fileID: 692552989}
-  games:
-  - {fileID: 102900000, guid: 373806b7a342e4d48a3161536d8ed916, type: 3}
-  - {fileID: 102900000, guid: efc10edc33fcf42ab8572faac8aa473c, type: 3}
-  - {fileID: 102900000, guid: a8491ec23c0704905a799ce8534cc44f, type: 3}
-  players:
-  - {fileID: 1744685048857954, guid: 1c838f69cb376430a9fe514936d1d228, type: 2}
-  - {fileID: 1275106525822762, guid: 936bb9ec91be540d98b1382c3bc67373, type: 2}
-  - {fileID: 1538393405757154, guid: 560dd498ad59d4aafa9ccd24c3164469, type: 2}
+  game_scenes:
+  - KingOfTheHill
+  - BoatRacing
+  - FallingFloor
+  game_player_prefabs: []
   prematchCountdown: 4
   topPanel: {fileID: 335416825}
   mainMenuPanel: {fileID: 2076569255}

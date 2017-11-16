@@ -59,7 +59,7 @@ GameObject:
   - component: {fileID: 114006565750470422}
   - component: {fileID: 114229257537451526}
   - component: {fileID: 114976254577790840}
-  - component: {fileID: 114008929763408828}
+  - component: {fileID: 114532631222965454}
   m_Layer: 0
   m_Name: BoatRacingPlayer
   m_TagString: Untagged
@@ -527,29 +527,6 @@ MonoBehaviour:
     i15: 115
   m_ServerOnly: 0
   m_LocalPlayerAuthority: 1
---- !u!114 &114008929763408828
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1275106525822762}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0cf70185ba012492d88aba2422eb50e3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  puff: {fileID: 1415218497985896}
-  playerNameObj: {fileID: 1111964693797992}
-  arrow: {fileID: 1362416285989350}
-  playerName: 
-  skin: 
-  higher_score_wins: 1
-  time: 0
-  gameplay_time: 5
-  pointsToWin: 200
-  score: 0
-  score_table: {fileID: 1735110896581332, guid: 1069c815b9efc41c2aff6381291a0eb4,
-    type: 2}
 --- !u!114 &114229257537451526
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -582,6 +559,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9db94a827afbe449ea7d3d6ab6eb585d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameManager: {fileID: 114532631222965454}
+--- !u!114 &114532631222965454
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1275106525822762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cf70185ba012492d88aba2422eb50e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  puff: {fileID: 1415218497985896}
+  playerNameObj: {fileID: 1111964693797992}
+  arrow: {fileID: 1362416285989350}
+  playerName: 
+  skin: 
+  higher_score_wins: 1
+  time: 0
+  gameplay_time: 5
+  pointsToWin: 200
+  score: 0
+  score_table: {fileID: 1735110896581332, guid: 1069c815b9efc41c2aff6381291a0eb4,
+    type: 2}
 --- !u!114 &114976254577790840
 MonoBehaviour:
   m_ObjectHideFlags: 1

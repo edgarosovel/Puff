@@ -10,14 +10,13 @@ public class MovementBoatRacing : NetworkBehaviour {
 	Vector3 _from, _to, velocity,velocity_cam;
 	EmitParticles particles;
 	Camera cam;
-	GameManager gameManager;
+	public GameManager gameManager;
 
 	void Start () {
 		if (!isLocalPlayer) {
 			Destroy (this);
 			return;
 		}
-		gameManager = GetComponent<GameManager>();
 		particles = GetComponent<EmitParticles> ();
 		cam = Camera.main;
 		cam_offset = cam.transform.position.x - gameObject.transform.position.x;

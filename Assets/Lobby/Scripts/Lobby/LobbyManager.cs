@@ -13,8 +13,9 @@ namespace Prototype.NetworkLobby
     {
         static short MsgKicked = MsgType.Highest + 1;
 		public MatchData match_data;
-
+		string next_scene = null;
         static public LobbyManager s_Singleton;
+		string last_scene;
 
 		[Space]
 		[Header("MINIGAMES")]
@@ -60,6 +61,7 @@ namespace Prototype.NetworkLobby
 
         void Start()
         {
+			last_scene = lobbyScene;
             s_Singleton = this;
             _lobbyHooks = GetComponent<Prototype.NetworkLobby.LobbyHook>();
             currentPanel = mainMenuPanel;
@@ -71,6 +73,55 @@ namespace Prototype.NetworkLobby
 
             SetServerInfo("Offline", "None");
         }
+
+
+		public void SetLastScene(string scene){
+			last_scene = scene;
+		}
+
+		public override void OnServerSceneChanged(string sceneName)
+		{
+			Debug.Log ("On server scene changed");
+			Debug.Log ("last scene: " + last_scene);
+
+			if (last_scene == lobbyScene) return;
+			gamePlayerPrefab = spawnPrefabs[2];
+
+			foreach (var lobbys in lobbySlots) {
+				Debug.Log (lobbys);
+				if (lobbys == null) continue;
+				var controllerId = lobbys.GetComponent<NetworkIdentity>().playerControllerId;
+				Debug.Log (controllerId);
+				Transform startPos = GetStartPosition();
+				GameObject gamePlayer;
+				if (startPos != null)
+				{
+					gamePlayer = (GameObject)Instantiate(gamePlayerPrefab, startPos.position, startPos.rotation);
+				}
+				else
+				{
+					gamePlayer = (GameObject)Instantiate(gamePlayerPrefab, Vector3.zero, Quaternion.identity);
+				}
+				OnLobbyServerSceneLoadedForPlayer (lobbys.gameObject, gamePlayer);
+				Debug.Log (lobbys.GetComponent<NetworkIdentity>().connectionToClient);
+				NetworkServer.ReplacePlayerForConnection(lobbys.GetComponent<NetworkIdentity>().connectionToClient, gamePlayer, controllerId);
+			}
+
+			base.OnServerSceneChanged (sceneName);
+
+//			if (sceneName != lobbyScene)
+//			{
+//				// call SceneLoadedForPlayer on any players that become ready while we were loading the scene.
+//				foreach (var pending in pendin)
+//				{
+//					SceneLoadedForPlayer(pending.conn, pending.lobbyPlayer);
+//				}
+//				m_PendingPlayers.Clear();
+//			}
+
+			//	OnLobbyServerSceneChanged(sceneName);
+		}
+
 
         public override void OnLobbyClientSceneChanged(NetworkConnection conn)
         {
@@ -121,6 +172,7 @@ namespace Prototype.NetworkLobby
                 topPanel.ToggleVisibility(false);
             }
         }
+
 
         public void ChangeTo(RectTransform newPanel)
         {
@@ -333,10 +385,11 @@ namespace Prototype.NetworkLobby
         {
             //This hook allows you to apply state data from the lobby-player to the game-player
             //just subclass "LobbyHook" and add it to the lobby object.
+			Debug.Log("OnLobbyServerSceneLoadedForPlayer");
 
             if (_lobbyHooks)
-                _lobbyHooks.OnLobbyServerSceneLoadedForPlayer(this, lobbyPlayer, gamePlayer);
-
+                _lobbyHooks.OnLobbyServerSceneLoadedForPlayer(this, lobbyPlayer, gamePlayer);	
+			
             return true;
         }
 
@@ -390,6 +443,7 @@ namespace Prototype.NetworkLobby
             }
 			//gamePlayerPrefab = players[0];
 			Debug.Log(playScene);
+
             ServerChangeScene(playScene);
         }
 	
