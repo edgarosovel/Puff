@@ -1,4 +1,4 @@
-OSXStandalone
+Android
 503a149893e832455b1fe5b67e0a2ef2 Assembly-CSharp.dll:.LoadingAnimation
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.NetworkLobbyHook
 09192da70bb9c922d9af053154d66e63 Assembly-CSharp.dll:Prototype.NetworkLobby.LobbyMainMenu

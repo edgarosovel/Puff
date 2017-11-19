@@ -14,14 +14,11 @@ public class MatchData : MonoBehaviour {
 
 	public void add_player (string id, string playerName, string skin, int global_points, int minigame_points){
 		if (players.ContainsKey(id)) return;
-		Debug.Log ("adding " + id);
 		players.Add(id, new PlayerInfo(playerName, skin, global_points, minigame_points));
 	}
 
 	public void remove_player (string id){
-		Debug.Log ("removing: " + id);
 		players.Remove (id);
-		Debug.Log ("removed: " + id);
 	}
 
 	public bool player_exists(string id){
@@ -35,15 +32,12 @@ public class MatchData : MonoBehaviour {
 
 	public void set_minigame_points(string id, int points){
 		if (!players.ContainsKey(id)) return;
-		Debug.Log ("setting "+id+" points "+points.ToString());
 		players[id].minigame_points = points;
 	}
 
 	public void set_game_manager(string id, GameManager game_manager){
-		Debug.Log (id);
 		if (!players.ContainsKey(id)) return;
 		players[id].game_manager = game_manager;
-		Debug.Log ("New manager: "+game_manager);
 	}
 
 	public string[] get_player_info(string id){

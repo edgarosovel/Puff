@@ -37,7 +37,6 @@ public class GameManager : NetworkBehaviour {
 		match_data = FindObjectOfType<MatchData> ();
 
 		if (match_data.player_exists (id)) {
-			Debug.Log (id);
 			if (isServer) match_data.set_game_manager (id, this);
 			string[] info = match_data.get_player_info (id);
 			set_up_player (info [1], info [0]); 
@@ -98,7 +97,6 @@ public class GameManager : NetworkBehaviour {
 		List<KeyValuePair<int,string>> minigame_scores = match_data.get_minigame_for_points (higher_score_wins);
 		int i = 1;
 		foreach (var player in minigame_scores) {
-			Debug.Log ("Minigame table: "+player.Value+ "score "+ player.Key.ToString());
 			int points = 0;
 			switch (i){
 			case 1: points = 10;

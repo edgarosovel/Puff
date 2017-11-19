@@ -20,11 +20,10 @@ public class NextGameButton : NetworkBehaviour {
 
 	public void next_scene()
 	{
-		
 		if (next != null)
 			LobbyManager.s_Singleton.ServerChangeScene (next);
 		else {
-			LobbyManager.s_Singleton.SetLastScene(SceneManager.GetActiveScene().name);
+			LobbyManager.s_Singleton.SetLastScene(LobbyManager.s_Singleton.lobbyScene);
 			LobbyManager.s_Singleton.ServerReturnToLobby ();
 		}
 	}

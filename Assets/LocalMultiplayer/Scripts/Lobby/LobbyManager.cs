@@ -83,7 +83,6 @@ namespace Prototype.NetworkLobby
 			if (game_order_stack.Count == 0) return null;
 			int x =  (int)game_order_stack.Pop ();
 			gamePlayerPrefab = spawnPrefabs [x];
-			Debug.Log (gamePlayerPrefab);
 			return game_scenes [x];
 		}
 
