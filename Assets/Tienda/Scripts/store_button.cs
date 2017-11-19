@@ -29,7 +29,6 @@ public class store_button : MonoBehaviour {
 		skin_name=materials[posicion].name;
 		gameObject.name = "item" + skin_name;
 		textoBoton.GetComponent<Text> ().text = skin_name;
-		Debug.Log (selected_skin + " : " + skin_name);
 		if(selected_skin==skin_name){
 			selected.SetActive (true);
 		}

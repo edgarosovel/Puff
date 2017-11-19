@@ -187,10 +187,13 @@ MonoBehaviour:
   selected: {fileID: 1072055936661482}
   skin: {fileID: 1346929604386688}
   materials:
-  - {fileID: 2100000, guid: 6faf02a8e44404314bcdbc25e80698ca, type: 2}
-  - {fileID: 2100000, guid: f88e6383d3b554f2aacc1b898b3dc281, type: 2}
-  - {fileID: 2100000, guid: cf43939578c85487b847adfc495d8382, type: 2}
   - {fileID: 2100000, guid: 52d71b36985a1419ca52cefd20f42f41, type: 2}
+  - {fileID: 2100000, guid: f88e6383d3b554f2aacc1b898b3dc281, type: 2}
+  - {fileID: 2100000, guid: 427db5ab9032e4d3b9663d46a977392d, type: 2}
+  - {fileID: 2100000, guid: cf43939578c85487b847adfc495d8382, type: 2}
+  - {fileID: 2100000, guid: 110e1588e82664d66a4bbcffd0f37ad0, type: 2}
+  - {fileID: 2100000, guid: 145add4433c9c465f84ba52778adc81b, type: 2}
+  - {fileID: 2100000, guid: 6faf02a8e44404314bcdbc25e80698ca, type: 2}
 --- !u!114 &11407924
 MonoBehaviour:
   m_ObjectHideFlags: 1

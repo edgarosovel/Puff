@@ -1,12 +1,8 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Lobby/Scripts/Lobby/LobbyManager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/LocalMultiplayer/Scripts/NetworkGameManager.cs">
     <Files>
-      <File FileName="Assets/Lobby/Scripts/Lobby/LobbyManager.cs" Line="365" Column="35" />
-      <File FileName="Assets/Games/Scripts/NextGameButton.cs" Line="13" Column="35" />
-      <File FileName="Assets/LocalMultiplayer/Scripts/NetworkGameManager.cs" Line="74" Column="56" />
-      <File FileName="Assets/Lobby/Scripts/Lobby/LobbyPlayer.cs" Line="36" Column="63" />
-      <File FileName="Assets/Games/Scripts/GameManager.cs" Line="29" Column="15" />
+      <File FileName="Assets/LocalMultiplayer/Scripts/NetworkGameManager.cs" Line="9" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

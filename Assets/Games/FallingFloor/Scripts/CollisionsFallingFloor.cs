@@ -17,10 +17,12 @@ public class CollisionsFallingFloor : NetworkBehaviour {
 
 	[ServerCallback]
 	void OnTriggerEnter(Collider col){
-		if(col.gameObject.tag == "caida" && GameManager.state=="playing"){
+		if(col.gameObject.tag == "caida") {
 			RpcDestroyPlayer (numberOfDead);
-			numberOfDead++;
-			//if (numberOfDead == gameManager.get_number_of_players () && GameManager.state=="playing") gameManager.CmdFinishGame ();
+			if (GameManager.state=="playing"){
+				numberOfDead++;
+				if (numberOfDead == gameManager.get_number_of_players ()) gameManager.CmdFinishGame ();
+			}
 		}
 	}
 
@@ -32,6 +34,6 @@ public class CollisionsFallingFloor : NetworkBehaviour {
 		GetComponent<SphereCollider> ().enabled = false;
 		gameObject.transform.GetChild (0).gameObject.SetActive (false);
 		gameObject.transform.GetChild(1).gameObject.SetActive(false);
-		if (isLocalPlayer) gameManager.score = numberOfDead;
+		if (isLocalPlayer && GameManager.state=="playing") gameManager.score = numberOfDead;
 	}
 }

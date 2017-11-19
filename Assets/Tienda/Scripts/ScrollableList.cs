@@ -31,7 +31,7 @@ public class ScrollableList : MonoBehaviour
         float ratio = width / rowRectTransform.rect.width;
         float height = rowRectTransform.rect.height * ratio;
         int rowCount = itemCount / columnCount;
-        if (itemCount % rowCount > 0)
+		if (itemCount % columnCount> 0)
             rowCount++;
 
         //adjust the height of the container so that it will just barely fit all its children

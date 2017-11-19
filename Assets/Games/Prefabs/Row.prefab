@@ -172,6 +172,7 @@ MonoBehaviour:
   place: {fileID: 114890633644085776}
   nametext: {fileID: 114578609212684928}
   points: {fileID: 114767163175706782}
+  place_color: {fileID: 114984451339179650}
 --- !u!114 &114578609212684928
 MonoBehaviour:
   m_ObjectHideFlags: 1

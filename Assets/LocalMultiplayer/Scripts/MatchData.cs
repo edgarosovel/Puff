@@ -19,7 +19,9 @@ public class MatchData : MonoBehaviour {
 	}
 
 	public void remove_player (string id){
+		Debug.Log ("removing: " + id);
 		players.Remove (id);
+		Debug.Log ("removed: " + id);
 	}
 
 	public bool player_exists(string id){
@@ -38,13 +40,19 @@ public class MatchData : MonoBehaviour {
 	}
 
 	public void set_game_manager(string id, GameManager game_manager){
+		Debug.Log (id);
 		if (!players.ContainsKey(id)) return;
 		players[id].game_manager = game_manager;
+		Debug.Log ("New manager: "+game_manager);
 	}
 
 	public string[] get_player_info(string id){
 		if (!players.ContainsKey(id)) return null;
 		return new string[2]{players[id].skin,players[id].playerName};
+	}
+
+	public void clear(){
+		players.Clear ();
 	}
 
 	public List<KeyValuePair<int,string>> get_global_leaderboard (){

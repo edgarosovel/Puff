@@ -11,6 +11,7 @@ TagManager:
   - texto_monedas
   - panel_choose
   - caida
+  - LobbyManager
   layers:
   - Default
   - TransparentFX

@@ -77,41 +77,41 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1744685048857954}
-  m_LocalRotation: {x: 0.8519691, y: 0.13718528, z: 0.07742388, w: -0.49933395}
+  m_LocalRotation: {x: -0.8515552, y: -0.1397757, z: -0.08184369, w: 0.49861616}
   m_LocalPosition: {x: -5.5, y: 4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 4142951013798602}
   - {fileID: 4845253955488558}
+  - {fileID: 4142951013798602}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -119.298996, y: 0, z: -18.643005}
 --- !u!4 &4142951013798602
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1784621739872044}
-  m_LocalRotation: {x: -0.8519691, y: -0.13718528, z: -0.07742388, w: -0.49933395}
-  m_LocalPosition: {x: 0.2190083, y: -0.64916825, z: 1.2209079}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0.8714884, y: 0.15564333, z: 0.043581985, w: 0.46301603}
+  m_LocalPosition: {x: 0.24, y: -0.74, z: 1.57}
+  m_LocalScale: {x: 1.2, y: 1.2, z: 1}
   m_Children: []
   m_Father: {fileID: 4089260725950790}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 127.49, y: -21.2, z: -30.8}
 --- !u!4 &4845253955488558
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000651652188016}
-  m_LocalRotation: {x: 0.07742388, y: -0.49933395, z: -0.8519691, w: 0.13718528}
-  m_LocalPosition: {x: 0.23465174, y: -0.6955373, z: 1.3081156}
+  m_LocalRotation: {x: -0.9872303, y: -0.15739733, z: 0.006351225, w: 0.023708254}
+  m_LocalPosition: {x: -0.12514758, y: 0.3709532, z: -0.6976616}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4089260725950790}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 63.5, y: 0, z: 0}
 --- !u!23 &23089291818396778
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -189,7 +189,7 @@ MeshRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 2100000, guid: c88587d661ca14a4a83da572f837640f, type: 3}
+  - {fileID: 2100000, guid: 07cde43b9af224591b1e8ebc6846f3dd, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -246,15 +246,15 @@ TextMesh:
   m_GameObject: {fileID: 1000651652188016}
   m_Text: edgarOsoVel
   m_OffsetZ: 0
-  m_CharacterSize: 0.05
+  m_CharacterSize: 0.2
   m_LineSpacing: 1
   m_Anchor: 4
   m_Alignment: 1
   m_TabSize: 4
-  m_FontSize: 100
+  m_FontSize: 60
   m_FontStyle: 0
   m_RichText: 0
-  m_Font: {fileID: 12800000, guid: c88587d661ca14a4a83da572f837640f, type: 3}
+  m_Font: {fileID: 12800000, guid: 07cde43b9af224591b1e8ebc6846f3dd, type: 3}
   m_Color:
     serializedVersion: 2
     rgba: 4294967295
@@ -299,6 +299,7 @@ MonoBehaviour:
   arrow: {fileID: 1784621739872044}
   playerName: 
   skin: 
+  id: 
   higher_score_wins: 1
   time: 0
   gameplay_time: 60
@@ -430,7 +431,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 2
-  randomSeed: -1406595613
+  randomSeed: -275720611
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -1339,7 +1340,7 @@ ParticleSystem:
       maxGradient:
         serializedVersion: 2
         key0: {r: 0.7647059, g: 0.09558824, b: 0.09558824, a: 1}
-        key1: {r: 0, g: 0, b: 0, a: 0}
+        key1: {r: 0.38235295, g: 0.27648848, b: 0.16306229, a: 1}
         key2: {r: 0, g: 0, b: 0, a: 0}
         key3: {r: 0, g: 0, b: 0, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}
@@ -1355,8 +1356,8 @@ ParticleSystem:
         ctime6: 0
         ctime7: 0
         atime0: 0
-        atime1: 48573
-        atime2: 0
+        atime1: 65535
+        atime2: 65535
         atime3: 0
         atime4: 0
         atime5: 0
@@ -3653,7 +3654,7 @@ ParticleSystemRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 2100000, guid: 77d08210df254d845885518314593544, type: 2}
+  - {fileID: 2100000, guid: 09a99b10658931c46a438c586a49ec65, type: 2}
   - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0

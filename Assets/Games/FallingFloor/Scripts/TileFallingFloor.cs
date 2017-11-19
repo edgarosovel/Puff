@@ -7,8 +7,6 @@ public class TileFallingFloor : MonoBehaviour {
 	bool shaking, down, wait, up, set_position;
 	public Rigidbody rb;
 	int distance_to_drop = 8;
-	float shaking_distance = 0.1f;
-	float shaking_val = 30f;
 	float shaking_time, down_time, wait_time, up_time, tmp_time;
 	Vector3 initial_position, final_position, new_position;
 	public Material verde, rojo;

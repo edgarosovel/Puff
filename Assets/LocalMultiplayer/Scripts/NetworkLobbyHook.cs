@@ -12,5 +12,6 @@ public class NetworkLobbyHook : LobbyHook
 
 		player_game_manager.skin = lobby.skin;
 		player_game_manager.playerName = lobby.playerName;
+		player_game_manager.id = lobby.id;
     }
 }

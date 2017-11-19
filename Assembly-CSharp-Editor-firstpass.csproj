@@ -52,9 +52,9 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Standard Assets\Editor\CrossPlatformInput\CrossPlatformInputInitialize.cs" />
-     <None Include="Assets\Lobby\Documentation.txt" />
+     <None Include="Assets\LocalMultiplayer\Documentation.txt" />
      <None Include="Assets\3dModels\Space Kit\License.txt" />
-     <None Include="Assets\Lobby\Instruction.txt" />
+     <None Include="Assets\LocalMultiplayer\Instruction.txt" />
      <None Include="Assets\Standard Assets\ParticleSystems\Shaders\PriorityParticleAlpha.shader" />
      <None Include="Assets\Standard Assets\ParticleSystems\ParticleSystemsGuidelines.txt" />
      <None Include="Assets\Main menu\DifuseX.shader" />

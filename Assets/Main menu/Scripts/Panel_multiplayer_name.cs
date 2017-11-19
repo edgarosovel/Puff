@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Prototype.NetworkLobby;
 
 public class Panel_multiplayer_name : MonoBehaviour {
 
@@ -11,8 +12,6 @@ public class Panel_multiplayer_name : MonoBehaviour {
 	Color red;
 
 	void Start () {
-		ZPlayerPrefs.DeleteKey ("skin");
-
 		if (!ZPlayerPrefs.HasKey("skin")) ZPlayerPrefs.SetString ("skin", "Vaquita");
 		if (ZPlayerPrefs.HasKey ("username")) gameObject.SetActive (false);
 		ColorUtility.TryParseHtmlString ("#EF4836", out red);

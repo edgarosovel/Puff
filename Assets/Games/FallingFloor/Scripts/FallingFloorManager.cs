@@ -8,13 +8,11 @@ public class FallingFloorManager : NetworkBehaviour {
 	public GameManager game_manager;
 	int[]tiles = {0,1,2,3,4,5,6,7,8,9};
 	FloorManager floor_manager;
-	int i;
 	float time;
 	int how_many, max_time;
 	bool not_done = true;
 
 	void Start () {
-		i = 0;
 		floor_manager = FindObjectOfType<FloorManager> ();
 		max_time = game_manager.gameplay_time;
 	}

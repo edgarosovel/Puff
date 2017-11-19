@@ -13,6 +13,8 @@ public class GameManager : NetworkBehaviour {
 	public string playerName;
 	[SyncVar]
 	public string skin;
+	[SyncVar]
+	public string id;
 	MatchData match_data;
 
 	ScoreTableManager score_table_manager;
@@ -34,10 +36,10 @@ public class GameManager : NetworkBehaviour {
 		}
 		match_data = FindObjectOfType<MatchData> ();
 
-		if (match_data.player_exists (SystemInfo.deviceUniqueIdentifier+playerName)) {
-			Debug.Log ("ok ya existe");
-			if (isServer) match_data.set_game_manager (SystemInfo.deviceUniqueIdentifier+playerName, this);
-			string[] info = match_data.get_player_info (SystemInfo.deviceUniqueIdentifier+playerName);
+		if (match_data.player_exists (id)) {
+			Debug.Log (id);
+			if (isServer) match_data.set_game_manager (id, this);
+			string[] info = match_data.get_player_info (id);
 			set_up_player (info [1], info [0]); 
 		} else if(isLocalPlayer) {
 			Invoke ("add_player", 2f);
@@ -134,7 +136,7 @@ public class GameManager : NetworkBehaviour {
 	[ClientRpc]
 	void RpcSetMinigameScore(){
 		if (isLocalPlayer) {
-			CmdSetMinigamePoints (SystemInfo.deviceUniqueIdentifier+playerName, score);
+			CmdSetMinigamePoints (id, score);
 		}
 	}
 		
@@ -189,8 +191,8 @@ public class GameManager : NetworkBehaviour {
 
 	///// MATCH DATA FUNCTIONS /////
 	void add_player(){
-		if (isServer) RpcAddPlayer (SystemInfo.deviceUniqueIdentifier + playerName, playerName, skin, 0, 0);
-		else CmdAddPlayer (SystemInfo.deviceUniqueIdentifier+playerName, playerName, skin, 0, 0);
+		if (isServer) RpcAddPlayer (id, playerName, skin, 0, 0);
+		else CmdAddPlayer (id, playerName, skin, 0, 0);
 	}
 
 	void set_up_player(string name, string skin){

@@ -7,6 +7,7 @@ public class Leaderboard : MonoBehaviour {
 
 	public GameObject row, nextgame_btn, scores_container;
 	public Text title;
+	Color32 color;
 
 
 	public void config (List<KeyValuePair<int,string>> scores, string title, bool is_minigame, bool activate_nextgame_btn){
@@ -36,7 +37,8 @@ public class Leaderboard : MonoBehaviour {
 					break;
 				}
 			}else points = x.Key.ToString() + " pts";
-			score_row.set_values (i.ToString() + "°", x.Value.ToString(), points);
+			color = (is_minigame) ? new Color32(255,237,0,100) : new Color32(68,108,179,100);
+			score_row.set_values (i.ToString() + "°", x.Value.ToString(), points, color);
 			i++;
 		});
 	}
