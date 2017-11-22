@@ -60,13 +60,13 @@
      <Compile Include="Assets\Games\FallingFloor\Scripts\TileFallingFloor.cs" />
      <Compile Include="Assets\Games\KingOfTheHill\Scripts\CollisionsKingOfTheHill.cs" />
      <Compile Include="Assets\Games\KingOfTheHill\Scripts\Movement_KOTH.cs" />
+     <Compile Include="Assets\Games\Scripts\ColorChanger.cs" />
      <Compile Include="Assets\Games\Scripts\GameManager.cs" />
      <Compile Include="Assets\Games\Scripts\Leaderboard.cs" />
      <Compile Include="Assets\Games\Scripts\LoadingAnimation.cs" />
      <Compile Include="Assets\Games\Scripts\NextGameButton.cs" />
      <Compile Include="Assets\Games\Scripts\ScoreRow.cs" />
      <Compile Include="Assets\Games\Scripts\ScoreTableManager.cs" />
-     <Compile Include="Assets\LocalMultiplayer\Scripts\BackToMainMenu.cs" />
      <Compile Include="Assets\LocalMultiplayer\Scripts\DraggablePanel.cs" />
      <Compile Include="Assets\LocalMultiplayer\Scripts\EventSystemChecker.cs" />
      <Compile Include="Assets\LocalMultiplayer\Scripts\Lobby\LobbyCountdownPanel.cs" />

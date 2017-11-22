@@ -66,14 +66,19 @@ namespace Prototype.NetworkLobby
             _lobbyHooks = GetComponent<Prototype.NetworkLobby.LobbyHook>();
             currentPanel = mainMenuPanel;
 
-            backButton.gameObject.SetActive(false);
+            //backButton.gameObject.SetActive(false);
+			backButton.transform.GetChild(0).GetComponent<Text>().text = "Main menu";
             GetComponent<Canvas>().enabled = true;
+			backDelegate = toMainMenu;
 
             DontDestroyOnLoad(gameObject);
 
             SetServerInfo("Offline", "None");
         }
 
+		public void toMainMenu(){
+			SceneManager.LoadScene (0);
+		}
 
 		public void SetLastScene(string scene){
 			last_scene = scene;
@@ -180,10 +185,12 @@ namespace Prototype.NetworkLobby
             if (currentPanel != mainMenuPanel)
             {
                 backButton.gameObject.SetActive(true);
+				backButton.transform.GetChild(0).GetComponent<Text>().text = "Exit";
             }
             else
             {
-                backButton.gameObject.SetActive(false);
+				backDelegate = toMainMenu;
+				backButton.transform.GetChild(0).GetComponent<Text>().text = "Main menu";
                 SetServerInfo("Offline", "None");
                 _isMatchmaking = false;
             }

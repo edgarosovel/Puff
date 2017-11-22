@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: e0c82ab08afa74154b9fc0838aec8ccd
+timeCreated: 1511132966
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Wonderbar
+  fontNames:
+  - Wonderbar
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

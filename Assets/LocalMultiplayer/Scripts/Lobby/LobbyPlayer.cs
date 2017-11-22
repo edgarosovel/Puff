@@ -34,7 +34,8 @@ namespace Prototype.NetworkLobby
 
         static Color JoinColor = new Color(255.0f/255.0f, 0.0f, 101.0f/255.0f,1.0f);
         static Color NotReadyColor = new Color(34.0f / 255.0f, 44 / 255.0f, 55.0f / 255.0f, 1.0f);
-        static Color ReadyColor = new Color(0.0f, 204.0f / 255.0f, 204.0f / 255.0f, 1.0f);
+        //static Color ReadyColor = new Color(0.0f, 204.0f / 255.0f, 204.0f / 255.0f, 1.0f);
+		static Color ReadyColor = new Color(108, 122, 137, 1.0f);
         static Color TransparentColor = new Color(0, 0, 0, 0);
 
         public override void OnClientEnterLobby()
@@ -105,7 +106,7 @@ namespace Prototype.NetworkLobby
 
             ChangeReadyButtonColor(JoinColor);
 
-            readyButton.transform.GetChild(0).GetComponent<Text>().text = "JOIN";
+            readyButton.transform.GetChild(0).GetComponent<Text>().text = "I'M READY!";
             readyButton.interactable = true;
             readyButton.onClick.RemoveAllListeners();
             readyButton.onClick.AddListener(OnReadyClicked);
@@ -135,7 +136,7 @@ namespace Prototype.NetworkLobby
                 ChangeReadyButtonColor(TransparentColor);
 
                 Text textComponent = readyButton.transform.GetChild(0).GetComponent<Text>();
-                textComponent.text = "READY";
+                textComponent.text = "PLAYER READY";
                 textComponent.color = ReadyColor;
                 readyButton.interactable = false;
             }
@@ -144,7 +145,7 @@ namespace Prototype.NetworkLobby
                 ChangeReadyButtonColor(isLocalPlayer ? JoinColor : NotReadyColor);
 
                 Text textComponent = readyButton.transform.GetChild(0).GetComponent<Text>();
-                textComponent.text = isLocalPlayer ? "JOIN" : "...";
+                textComponent.text = isLocalPlayer ? "I'M READY" : "...";
                 textComponent.color = Color.white;
                 readyButton.interactable = isLocalPlayer;
             }

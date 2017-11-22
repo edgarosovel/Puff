@@ -831,7 +831,7 @@ Transform:
   m_GameObject: {fileID: 666446528}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 5, y: -10, z: 5}
-  m_LocalScale: {x: 20, y: 9, z: 20}
+  m_LocalScale: {x: 40, y: 15, z: 40}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 20
@@ -1109,7 +1109,13 @@ Prefab:
     - target: {fileID: 114951249288175406, guid: bfa9ba414e6d04f9b80ce7c96e73f70b,
         type: 2}
       propertyPath: m_Text
-      value: Avoid the falling floor to be the last one standing.
+      value: Move your player with the joystick to avoid the red falling tiles. Be
+        the last one standing to win!
+      objectReference: {fileID: 0}
+    - target: {fileID: 114951249288175406, guid: bfa9ba414e6d04f9b80ce7c96e73f70b,
+        type: 2}
+      propertyPath: m_FontData.m_Alignment
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bfa9ba414e6d04f9b80ce7c96e73f70b, type: 2}
@@ -2122,7 +2128,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1871035589884266, guid: 138cf4b868502472f913bb218b2128fc, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 138cf4b868502472f913bb218b2128fc, type: 2}

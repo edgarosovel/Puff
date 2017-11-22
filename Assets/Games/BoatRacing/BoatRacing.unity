@@ -772,6 +772,12 @@ Prefab:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114951249288175406, guid: bfa9ba414e6d04f9b80ce7c96e73f70b,
+        type: 2}
+      propertyPath: m_Text
+      value: "Be the first one to cross the finish line. Tap repeatedly to make your
+        bote move forward. \nThe faster you tap, the faster you go!"
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bfa9ba414e6d04f9b80ce7c96e73f70b, type: 2}
   m_IsPrefabParent: 0

@@ -211,8 +211,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 330978816}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -7, z: 0}
-  m_LocalScale: {x: 20, y: 3, z: 20}
+  m_LocalPosition: {x: 0, y: -14, z: 0}
+  m_LocalScale: {x: 40, y: 10, z: 40}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
@@ -523,7 +523,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1871035589884266, guid: 138cf4b868502472f913bb218b2128fc, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 138cf4b868502472f913bb218b2128fc, type: 2}
@@ -801,7 +801,8 @@ Prefab:
     - target: {fileID: 114951249288175406, guid: bfa9ba414e6d04f9b80ce7c96e73f70b,
         type: 2}
       propertyPath: m_Text
-      value: Push your oponents off the hill to be the last one standing
+      value: Use the joystick to move your player. Push your oponents off the hill
+        to be the last one standing and win!
       objectReference: {fileID: 0}
     - target: {fileID: 1596473674700720, guid: bfa9ba414e6d04f9b80ce7c96e73f70b, type: 2}
       propertyPath: m_Layer
@@ -842,6 +843,15 @@ Prefab:
     - target: {fileID: 1464038488583516, guid: bfa9ba414e6d04f9b80ce7c96e73f70b, type: 2}
       propertyPath: m_Layer
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 224849816696770046, guid: bfa9ba414e6d04f9b80ce7c96e73f70b,
+        type: 2}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1972030415293008, guid: bfa9ba414e6d04f9b80ce7c96e73f70b, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bfa9ba414e6d04f9b80ce7c96e73f70b, type: 2}

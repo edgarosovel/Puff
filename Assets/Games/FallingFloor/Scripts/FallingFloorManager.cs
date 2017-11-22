@@ -28,8 +28,8 @@ public class FallingFloorManager : NetworkBehaviour {
 	void drop_tiles () {
 		if (GameManager.state != "playing") return;
 	
-		time = map (game_manager.time, 0f, max_time, 3f, 7f);
-		how_many = Mathf.RoundToInt (map (game_manager.time, 0f, max_time, 8f, 1f));
+		time = map (game_manager.time, 0f, max_time, 3f, 6f);
+		how_many = Mathf.RoundToInt (map (game_manager.time, 0f, max_time, 8f, 2f));
 
 		for (int i = 0; i < 9; i++) {
 			int c = Random.Range(0, 9-i);
