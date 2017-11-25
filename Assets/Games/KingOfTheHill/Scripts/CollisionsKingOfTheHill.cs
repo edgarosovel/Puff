@@ -18,23 +18,28 @@ public class CollisionsKingOfTheHill : NetworkBehaviour {
 	[ServerCallback]
 	void OnTriggerEnter(Collider col){
 		if(col.gameObject.tag == "caida"){
-			RpcDestroyPlayer (numberOfDead);
+			RpcDestroyPlayer ();
 			if (GameManager.state == "playing") {
+				RpcSetPlayerScore (numberOfDead);
 				numberOfDead++;
-				if (numberOfDead == gameManager.get_number_of_players ())
+				if (numberOfDead >= gameManager.get_number_of_players ())
 					gameManager.CmdFinishGame ();
 			}
 		}
 	}
 
 	[ClientRpc]
-	void RpcDestroyPlayer(int numberOfDead){
+	void RpcDestroyPlayer(){
 		ps.Play ();
 		GetComponent<MeshRenderer> ().enabled = false;
 		GetComponent<Rigidbody> ().isKinematic = true;
 		GetComponent<SphereCollider> ().enabled = false;
 		gameObject.transform.GetChild (0).gameObject.SetActive (false);
 		gameObject.transform.GetChild(1).gameObject.SetActive(false);
-		if (isLocalPlayer && GameManager.state == "playing") gameManager.score = numberOfDead;
+	}
+
+	[ClientRpc]
+	void RpcSetPlayerScore(int numberOfDead){
+		gameManager.score = numberOfDead;
 	}
 }

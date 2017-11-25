@@ -15,7 +15,7 @@ public class GameManager : NetworkBehaviour {
 	public string skin;
 	[SyncVar]
 	public string id;
-	MatchData match_data;
+	//MatchData match_data;
 
 	ScoreTableManager score_table_manager;
 	public bool higher_score_wins;
@@ -34,11 +34,11 @@ public class GameManager : NetworkBehaviour {
 		} else {
 			playerNameObj.SetActive (false);
 		}
-		match_data = FindObjectOfType<MatchData> ();
+		//match_data = FindObjectOfType<MatchData> ();
 
-		if (match_data.player_exists (id)) {
-			if (isServer) match_data.set_game_manager (id, this);
-			string[] info = match_data.get_player_info (id);
+		if (MatchData.instance.player_exists (id)) {
+			if (isServer) MatchData.instance.set_game_manager (id, this);
+			string[] info = MatchData.instance.get_player_info (id);
 			set_up_player (info [1], info [0]); 
 		} else if(isLocalPlayer) {
 			Invoke ("add_player", 2f);
@@ -76,7 +76,7 @@ public class GameManager : NetworkBehaviour {
 	}
 
 	void set_minigame_scores(){
-		foreach (var player in match_data.players.Values) {
+		foreach (var player in MatchData.instance.players.Values) {
 			player.game_manager.RpcSetMinigameScore();
 		}
 	}
@@ -94,7 +94,7 @@ public class GameManager : NetworkBehaviour {
 	}
 
 	void update_global_points(){
-		List<KeyValuePair<int,string>> minigame_scores = match_data.get_minigame_for_points (higher_score_wins);
+		List<KeyValuePair<int,string>> minigame_scores = MatchData.instance.get_minigame_for_points (higher_score_wins);
 		int i = 1;
 		foreach (var player in minigame_scores) {
 			int points = 0;
@@ -114,18 +114,18 @@ public class GameManager : NetworkBehaviour {
 			default: points = 0;
 				break;
 			}
-			match_data.add_global_points (player.Value, points);
+			MatchData.instance.add_global_points (player.Value, points);
 			i++;
 		}
 	}
 
 	void show_minigame_scores (){
-		score_table_manager.create_minigame_score_table (match_data.get_minigame_scores (higher_score_wins), "This game scores");
+		score_table_manager.create_minigame_score_table (MatchData.instance.get_minigame_scores (higher_score_wins), "This game scores");
 	}
 
 	void show_global_scores(){
 		score_table_manager.destroy_minigame_score_table();
-		List<KeyValuePair<int,string>> global_scores = match_data.get_global_leaderboard();
+		List<KeyValuePair<int,string>> global_scores = MatchData.instance.get_global_leaderboard();
 		score_table_manager.create_global_score_table (global_scores, "Global scores", isServer);
 	}
 
@@ -199,11 +199,11 @@ public class GameManager : NetworkBehaviour {
 	}
 
 	public List<KeyValuePair<int,string>> get_minigame (bool higher_score_wins){
-		return match_data.get_minigame_scores (higher_score_wins);
+		return MatchData.instance.get_minigame_scores (higher_score_wins);
 	}
 
 	public int get_number_of_players(){
-		return match_data.players.Count;
+		return MatchData.instance.players.Count;
 	}
 
 	[Command]
@@ -213,8 +213,8 @@ public class GameManager : NetworkBehaviour {
 
 	[ClientRpc]
 	public void RpcAddPlayer (string id, string playerName, string skin, int global_points, int minigame_points){
-		match_data.add_player (id, playerName, skin, global_points, minigame_points);
-		if (isServer) match_data.set_game_manager (id, this);
+		MatchData.instance.add_player (id, playerName, skin, global_points, minigame_points);
+		if (isServer) MatchData.instance.set_game_manager (id, this);
 	}
 
 	[Command]
@@ -224,7 +224,7 @@ public class GameManager : NetworkBehaviour {
 
 	[ClientRpc]
 	public void RpcRemovePlayer (string id){
-		match_data.remove_player (id);
+		MatchData.instance.remove_player (id);
 	}
 
 	[Command]
@@ -234,7 +234,7 @@ public class GameManager : NetworkBehaviour {
 
 	[ClientRpc]
 	public void RpcAddGlobalPoints  (string id, int points){
-		match_data.add_global_points (id, points);
+		MatchData.instance.add_global_points (id, points);
 	}
 
 	[Command]
@@ -244,6 +244,6 @@ public class GameManager : NetworkBehaviour {
 
 	[ClientRpc]
 	public void RpcSetMinigamePoints  (string id, int points){
-		match_data.set_minigame_points (id, points);
+		MatchData.instance.set_minigame_points (id, points);
 	}
 }

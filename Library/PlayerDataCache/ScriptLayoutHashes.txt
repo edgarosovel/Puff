@@ -134,6 +134,7 @@ c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.VR.WSA.Spa
 fef6db5005c973ecbd329ffed553cc76 Assembly-CSharp.dll:.ScrollableList
 20dc7506ae693f0ad4a7e17ed42608ef Assembly-CSharp.dll:.GameManager
 84c28e44706cad3fb91ddd1367bd5424 Assembly-CSharp.dll:.Store_button_coins
+cdfc8883e2ffaa4bacceace8e502ad20 Assembly-CSharp.dll:.ColorChanger
 149e538468c9a609cf26b23682c996c7 Assembly-CSharp-firstpass.dll:UnityStandardAssets.Utility.PlatformSpecificContent
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.MatchData
 3eba178d0758d42d51f172e1713b02a4 Assembly-CSharp.dll:.ScoreRow
@@ -202,4 +203,3 @@ f4b175ffc1eeca85d2783436b4c764a7 Assembly-CSharp-firstpass.dll:UnityStandardAsse
 d27699dfc30c2a21439bbef1ad43c8ea Assembly-CSharp.dll:.CollisionsKingOfTheHill
 239d2cc8d353bbfcbefc27fa8f0221cc Assembly-CSharp.dll:Prototype.NetworkLobby.LobbyServerList
 0f3d4bb7128a287827d041c696039525 Assembly-CSharp-firstpass.dll:UnityStandardAssets.Utility.AutoMobileShaderSwitch
-cdfc8883e2ffaa4bacceace8e502ad20 Assembly-CSharp.dll:.ColorChanger

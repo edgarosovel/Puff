@@ -639,14 +639,14 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -1633699259
+  randomSeed: -1761753109
   InitialModule:
     serializedVersion: 3
     enabled: 1
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.8
+      scalar: 0.75
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -729,7 +729,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 1, g: 1, b: 1, a: 0.147}
+      maxColor: {r: 1, g: 1, b: 1, a: 0.409}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -1083,12 +1083,12 @@ ParticleSystem:
     serializedVersion: 5
     enabled: 1
     type: 4
-    angle: 24.6
+    angle: 33.83
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
     radiusThickness: 1
     donutRadius: 0.2
-    m_Position: {x: 0, y: 0.5, z: 1.7}
+    m_Position: {x: 0, y: 0.5, z: 1.6}
     m_Rotation: {x: 185.9, y: 0, z: 0}
     m_Scale: {x: 0.29, y: 0.05, z: 0.62}
     placementMode: 0
@@ -3208,7 +3208,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     minVertexDistance: 0
-    textureMode: 0
+    textureMode: 1
     worldSpace: 1
     dieWithParticles: 1
     sizeAffectsWidth: 0
@@ -3217,7 +3217,7 @@ ParticleSystem:
     generateLightingData: 0
     colorOverLifetime:
       serializedVersion: 2
-      minMaxState: 1
+      minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
       maxColor: {r: 0.45588237, g: 0.72981757, b: 1, a: 0.978}
       maxGradient:
@@ -3281,7 +3281,7 @@ ParticleSystem:
     widthOverTrail:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0
+      scalar: 0.2
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -3323,7 +3323,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.1684148, g: 0.33264834, b: 0.6544118, a: 1}
+      maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}

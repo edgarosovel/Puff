@@ -9,7 +9,7 @@ public class MatchData : MonoBehaviour {
 	public static MatchData instance;
 
 	void Awake (){
-		//instance = this;
+		instance = this;
 	}
 
 	public void add_player (string id, string playerName, string skin, int global_points, int minigame_points){
