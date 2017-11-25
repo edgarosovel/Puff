@@ -35,7 +35,7 @@ namespace Prototype.NetworkLobby
         static Color JoinColor = new Color(255.0f/255.0f, 0.0f, 101.0f/255.0f,1.0f);
         static Color NotReadyColor = new Color(34.0f / 255.0f, 44 / 255.0f, 55.0f / 255.0f, 1.0f);
         //static Color ReadyColor = new Color(0.0f, 204.0f / 255.0f, 204.0f / 255.0f, 1.0f);
-		static Color ReadyColor = new Color(108, 122, 137, 1.0f);
+		static Color ReadyColor = new Color(108, 122, 137, 255.0f);
         static Color TransparentColor = new Color(0, 0, 0, 0);
 
         public override void OnClientEnterLobby()
@@ -77,7 +77,7 @@ namespace Prototype.NetworkLobby
             b.pressedColor = c;
             b.highlightedColor = c;
             b.disabledColor = c;
-            readyButton.colors = b;
+			readyButton.GetComponent<Image>().color = c;
         }
 
         void SetupOtherPlayer()
@@ -136,7 +136,7 @@ namespace Prototype.NetworkLobby
                 ChangeReadyButtonColor(TransparentColor);
 
                 Text textComponent = readyButton.transform.GetChild(0).GetComponent<Text>();
-                textComponent.text = "PLAYER READY";
+                textComponent.text = "READY";
                 textComponent.color = ReadyColor;
                 readyButton.interactable = false;
             }

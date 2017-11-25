@@ -200,6 +200,6 @@ f4b175ffc1eeca85d2783436b4c764a7 Assembly-CSharp-firstpass.dll:UnityStandardAsse
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp-firstpass.dll:UnityStandardAssets.Utility.FPSCounter
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:Prototype.NetworkLobby.DraggablePanel
 d27699dfc30c2a21439bbef1ad43c8ea Assembly-CSharp.dll:.CollisionsKingOfTheHill
-05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.BackToMainMenu
 239d2cc8d353bbfcbefc27fa8f0221cc Assembly-CSharp.dll:Prototype.NetworkLobby.LobbyServerList
 0f3d4bb7128a287827d041c696039525 Assembly-CSharp-firstpass.dll:UnityStandardAssets.Utility.AutoMobileShaderSwitch
+cdfc8883e2ffaa4bacceace8e502ad20 Assembly-CSharp.dll:.ColorChanger
