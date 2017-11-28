@@ -6,23 +6,29 @@ using UnityEngine.Networking;
 public class CollisionsFallingFloor : NetworkBehaviour {
 
 	public GameManager gameManager;
-	int numberOfDead = 1;
+	static int numberOfDead;
 	ParticleSystem ps;
 
 
 	void Start () {
+		numberOfDead = 1;
 		ps = gameObject.GetComponent<ParticleSystem>();	
+		Invoke ("set_max_score", 3f);
 	}
 
+	void set_max_score(){
+		gameManager.score = gameManager.get_number_of_players();	
+	}
 
 	[ServerCallback]
 	void OnTriggerEnter(Collider col){
+		if (!isServer) return;
 		if(col.gameObject.tag == "caida") {
 			RpcDestroyPlayer ();
-			if (GameManager.state=="playing"){
+			if (GameManager.state == "playing") {
 				RpcSetPlayerScore (numberOfDead);
 				numberOfDead++;
-				if (numberOfDead >= gameManager.get_number_of_players ()) 
+				if (numberOfDead >= gameManager.get_number_of_players ())
 					gameManager.CmdFinishGame ();
 			}
 		}

@@ -366,7 +366,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_TransformSyncMode: 3
-  m_SendInterval: 0.06666667
+  m_SendInterval: 0.04
   m_SyncRotationAxis: 7
   m_RotationSyncCompression: 1
   m_SyncSpin: 0
@@ -387,7 +387,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   force: 35
-  gameManager: {fileID: 114295483430822726}
 --- !u!135 &135563426113667980
 SphereCollider:
   m_ObjectHideFlags: 1
